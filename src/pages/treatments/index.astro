@@ -1,0 +1,6 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'; import SectionHeading from '../../components/SectionHeading.astro'; import TreatmentAccordion from '../../components/TreatmentAccordion.astro'; import {treatments} from '../../data/treatments';
+---
+<BaseLayout title="Treatments · Riformaskin" description="Die Treatments von Riformaskin – individuell abgestimmte Hautpflege und Beauty-Behandlungen.">
+ <section class="container-page pb-20 pt-36 md:pb-28 md:pt-48"><SectionHeading eyebrow="Treatments" title="Behandlungen mit Blick auf das Wesentliche." intro="Die folgenden Inhalte sind vorläufige Platzhalter und werden vor dem Launch mit dem finalen Leistungskatalog ersetzt."/><div class="mt-16"><TreatmentAccordion items={treatments}/></div></section>
+</BaseLayout>

@@ -1,0 +1,14 @@
+---
+import { site, contact } from '../data/site';
+---
+<section id="contact" class="scroll-mt-20 bg-ink text-ivory" aria-labelledby="contact-title">
+ <div class="container-page py-20 md:py-28">
+  <div class="grid gap-14 md:grid-cols-[1.2fr_.8fr] md:items-end">
+   <div><p class="eyebrow text-ivory/55">Contact Me</p><h2 id="contact-title" class="serif mt-5 max-w-3xl text-5xl leading-[.95] md:text-7xl">Ein Termin beginnt mit einem Gespräch.</h2><p class="mt-7 max-w-xl leading-7 text-ivory/65">Für Fragen, Terminwünsche oder ein persönliches Anliegen erreichst du Riformaskin direkt über die folgenden Wege.</p></div>
+   <div class="grid gap-8 text-sm sm:grid-cols-2 md:grid-cols-1">
+    <div><p class="eyebrow text-ivory/40">Studio</p><address class="mt-3 not-italic leading-6 text-ivory/80">{site.address.street}<br/>{site.address.postalCode} {site.address.city}<br/>{site.address.country}</address><a class="mt-3 inline-block underline underline-offset-4" href={site.googleMapsUrl} target="_blank" rel="noopener noreferrer">Google Maps öffnen</a></div>
+    <div><p class="eyebrow text-ivory/40">Direkt</p><div class="mt-3 space-y-2"><a class="block hover:opacity-60" href={contact.phoneHref}>{site.phone}</a><a class="block hover:opacity-60" href={contact.whatsappHref} target="_blank" rel="noopener noreferrer">WhatsApp</a><a class="block hover:opacity-60" href={contact.emailHref}>{site.email}</a><a class="block hover:opacity-60" href={site.instagram} target="_blank" rel="noopener noreferrer">Instagram</a></div></div>
+   </div>
+  </div>
+ </div>
+</section>

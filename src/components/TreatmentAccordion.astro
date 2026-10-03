@@ -1,0 +1,18 @@
+---
+import type { Treatment } from '../data/treatments';
+const { items } = Astro.props as {items:Treatment[]};
+---
+<div class="border-t border-line">
+ {items.map((t,i)=><article class="treatment-item border-b border-line" data-index={i}>
+  <button class="treatment-trigger focus-ring flex w-full items-center justify-between gap-6 py-7 text-left md:py-9" aria-expanded="false" aria-controls={`treatment-panel-${i}`}>
+   <span><span class="block text-xs tracking-[.18em] text-cocoa/45">0{i+1}</span><span class="serif mt-2 block text-3xl md:text-5xl">{t.title}</span><span class="mt-2 block max-w-xl text-sm leading-6 text-cocoa/60 md:text-base">{t.shortDescription}</span></span>
+   <span aria-hidden="true" class="chevron shrink-0 text-2xl transition-transform duration-300">↘</span>
+  </button>
+  <div id={`treatment-panel-${i}`} class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300" hidden>
+   <div class="min-h-0 overflow-hidden"><div class="grid gap-7 pb-8 md:grid-cols-[.9fr_1.1fr] md:items-center md:pb-10"><img src={t.image} alt={`Beispielhafte Darstellung für ${t.title}`} class="aspect-[4/3] w-full object-cover" loading="lazy" width="900" height="675"/><div><p class="max-w-xl text-base leading-7 text-cocoa/75">{t.description}</p>{t.detailPageEnabled && <a class="mt-6 inline-block underline underline-offset-4" href={`/treatments/${t.slug}/`}>Details ansehen</a>}</div></div></div>
+  </div>
+ </article>)}
+</div>
+<script>
+ document.querySelectorAll<HTMLElement>('.treatment-item').forEach(item=>{const btn=item.querySelector<HTMLButtonElement>('.treatment-trigger');const panel=item.querySelector<HTMLElement>('[id^="treatment-panel"]');const chevron=item.querySelector<HTMLElement>('.chevron');if(!btn||!panel||!chevron)return;btn.addEventListener('click',()=>{const open=btn.getAttribute('aria-expanded')==='true';document.querySelectorAll<HTMLElement>('.treatment-item').forEach(other=>{if(other!==item){const b=other.querySelector<HTMLButtonElement>('.treatment-trigger');const p=other.querySelector<HTMLElement>('[id^="treatment-panel"]');const c=other.querySelector<HTMLElement>('.chevron');b?.setAttribute('aria-expanded','false');if(p)p.hidden=true;c?.classList.remove('rotate-90')}});btn.setAttribute('aria-expanded',String(!open));panel.hidden=open;chevron.classList.toggle('rotate-90',!open);});});
+</script>

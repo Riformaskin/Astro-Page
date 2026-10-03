@@ -1,0 +1,8 @@
+---
+const { eyebrow, title, intro } = Astro.props;
+---
+<div class="max-w-3xl">
+  {eyebrow && <p class="eyebrow mb-5 text-cocoa/70">{eyebrow}</p>}
+  <h2 class="serif text-5xl leading-[.95] tracking-[-.02em] md:text-7xl">{title}</h2>
+  {intro && <p class="mt-7 max-w-2xl text-base leading-7 text-cocoa/75 md:text-lg">{intro}</p>}
+</div>
