@@ -1,12 +1,12 @@
 export const site = {
-  name: 'Riformaskin',
+  name: 'RIFORMA SKIN',
   owner: 'Jeannine Sylvia Herdegen',
   email: 'info@riformaskin.de',
-  phone: '+49 000 000000',
-  whatsapp: '49000000000',
-  instagram: 'https://instagram.com/placeholder',
-  address: { street:'Musterstraße 00', postalCode:'00000', city:'Musterstadt', country:'Deutschland' },
-  googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=Musterstraße+00+Musterstadt',
+  phone: '+49 160 4505138',
+  whatsapp: '00491604505138',
+  instagram: 'https://instagram.com/riformaskin',
+  address: { street:'Zeppelinstraße 2', postalCode:'50667', city:'Köln', country:'Deutschland' },
+  googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=Zeppelinstraße+2+Köln',
   baseUrl: 'https://riformaskin.de'
 };
 
